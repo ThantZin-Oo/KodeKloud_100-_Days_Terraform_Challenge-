@@ -19,7 +19,7 @@ resource "aws_ami_from_instance" "nautilus-ec2-ami" {
 data "aws_ami" "nautilus_state" {
   depends_on = [aws_ami_from_instance.nautilus-ec2-ami]
   filter {
-    name = "Name"
+    name   = "Name"
     values = ["nautilus-ec2-ami"]
   }
 }
