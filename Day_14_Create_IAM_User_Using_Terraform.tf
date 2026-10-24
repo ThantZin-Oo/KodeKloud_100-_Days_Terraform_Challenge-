@@ -4,11 +4,11 @@ resource "aws_iam_user" "rose" {
     Name = "iamuser_rose"
   }
 }
- 
+
 resource "aws_iam_access_key" "rose" {
   user = aws_iam_user.rose.name
 }
- 
+
 data "aws_iam_policy_document" "rose_policy" {
   statement {
     effect    = "Allow"
@@ -16,8 +16,8 @@ data "aws_iam_policy_document" "rose_policy" {
     resources = ["*"]
   }
 }
- 
- 
+
+
 resource "aws_iam_user_policy" "rose_policy" {
   name   = "rose_admin"
   user   = aws_iam_user.rose.name
